@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Cars from './Cars';
 // import PropTypes from 'prop-types'
 
 
@@ -23,6 +24,7 @@ class Header extends Component{
             <div>
                 <h1>My component</h1>
                 <button onClick={this.handleClick}>ReverseCar</button>
+                <Cars msg="Subaru Sport" coolcars={this.state.cars}/>
             </div>
         );
     }

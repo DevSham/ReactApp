@@ -8,7 +8,7 @@ class Cars extends Component{
                 <h2>{this.props.msg}</h2>
                 <div>
                     {this.props.coolcars.map((item, i) => {
-                        return <p key={i}>{items}</p>
+                        return <p key={i}>{item}</p>
                     })}
                 </div>
             </div>

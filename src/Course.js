@@ -8,6 +8,9 @@ class Course extends Component{
         };
         this.clicker = this.clicker.bind(this);
     }
+    clicker(){
+
+    }
 
     render(){
         return(
