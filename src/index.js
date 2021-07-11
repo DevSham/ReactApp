@@ -10,6 +10,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+
 const myfirstelement = <h1>Hello React!</h1>
 
 function Person(props){
@@ -27,6 +28,7 @@ var course = [
     {name: 'WINRE doctor', price: 40000000},
     {name: 'KIOPL sales person', price: 50000000},
 ];
+var items={course};
 
 var app = (
     <div>
@@ -59,11 +61,23 @@ ReactDOM.render(
                 </li>
             </ul>
             <hr/>
-            <Route exact path="/" component= {Timer}/>
-            <Route path="/header" component={Header}/>
-            <Route path="/random" component={Parent}/>
-            <Route path="/course_sales" component={Course}/>
-            <Route path="/people" component={Person}/>
+
+            <Route exact path="/">
+                <Timer start={Date.now()}/>
+            </Route>
+            <Route path="/header">
+                <Header/>
+            </Route>
+            <Route path="/random">
+                <Parent/>
+            </Route>
+            <Route path="/course_sales">
+                <CourseSales items={course}/>
+            </Route>
+            <Route path="/people">
+                <Person name="Sham" age="29" />
+                <Person name="Naka" age="39" />
+            </Route>
         </div>
     </Router>
     , document.getElementById('root'));
