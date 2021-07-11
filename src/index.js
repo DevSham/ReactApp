@@ -4,6 +4,12 @@ import Header from './Header';
 import Parent from "./Parent";
 import Timer from './Timer';
 import CourseSales from "./CourseSales";
+import Course from "./Course";
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 const myfirstelement = <h1>Hello React!</h1>
 
 function Person(props){
@@ -39,5 +45,26 @@ var app = (
 
 
 
-ReactDOM.render(myfirstelement, document.getElementById('root'));
-ReactDOM.render(app, document.querySelector('#app'));
+ReactDOM.render(
+    <Router>
+        myfirstelement
+        <div>
+            <ul>
+                <li>
+                    <Link to={"/"}>Timer</Link><br/>
+                    <Link to={"/header"}>Cars</Link><br/>
+                    <Link to={"/random"}>Generate Numbers</Link><br/>
+                    <Link to={"/course_sales"}>Course Sales</Link><br/>
+                    <Link to={"/people"}>People</Link><br/>
+                </li>
+            </ul>
+            <hr/>
+            <Route exact path="/" component= {Timer}/>
+            <Route path="/header" component={Header}/>
+            <Route path="/random" component={Parent}/>
+            <Route path="/course_sales" component={Course}/>
+            <Route path="/people" component={Person}/>
+        </div>
+    </Router>
+    , document.getElementById('root'));
+// ReactDOM.render(app, document.querySelector('#app'));
