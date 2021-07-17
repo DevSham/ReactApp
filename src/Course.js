@@ -8,6 +8,12 @@ class Course extends Component{
         };
         this.clicker = this.clicker.bind(this);
     }
+    clicker(){
+        var active = !this.state.active;
+        this.setState({active: active})
+        this.props.sumPrice(active ? this.props.price: -this.props.price);
+
+    }
 
     render(){
         return(
